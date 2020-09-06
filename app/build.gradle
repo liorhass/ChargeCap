@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+
+    // https://stackoverflow.com/a/56996020/1071117
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    defaultConfig {
+        applicationId "com.liorhass.android.chargecap"
+        minSdkVersion 25
+        targetSdkVersion 29
+        versionCode 4
+        versionName "1.2.0"  // Should be in sync with strings.xml
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Set the generated APK file name.  https://stackoverflow.com/a/28992851/1071117
+        setProperty("archivesBaseName", "ChargeCap_${versionName}_${versionCode}")
+    }
+    signingConfigs {
+        release {
+            keyAlias 'upload_1'
+            keyPassword ''
+            storeFile file('C:\\Users\\lior\\Documents\\etc\\Android_Keystore.ks')
+            storePassword ''
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+    implementation 'com.google.android.material:material:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Logging. Latest version here: https://mvnrepository.com/artifact/com.jakewharton.timber/timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // WorkManager
+    implementation 'androidx.work:work-runtime-ktx:2.4.0'
+
+    implementation 'androidx.preference:preference:1.1.1'
+}
