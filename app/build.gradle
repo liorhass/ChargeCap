@@ -14,8 +14,8 @@ android {
         applicationId "com.liorhass.android.chargecap"
         minSdkVersion 25
         targetSdkVersion 29
-        versionCode 4
-        versionName "1.2.0"  // Should be in sync with strings.xml
+        versionCode 5
+        versionName "1.2.1"  // Should be in sync with strings.xml
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

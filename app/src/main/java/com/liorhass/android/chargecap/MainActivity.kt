@@ -198,6 +198,9 @@ class MainActivity : AppCompatActivity() {
 
         // Stop polling battery percentage
         handler.removeCallbacks(pollBatteryRunnable)
+
+        // Stop tone and release media-player (if active)
+        stopTone()
     }
 
     // Needed so when the screen is off/locked we can turn it on and run over the lock-screen
