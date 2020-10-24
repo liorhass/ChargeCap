@@ -45,6 +45,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
 import android.view.*
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -125,6 +126,16 @@ class MainActivity : AppCompatActivity() {
         initNotificationChannel() // On Android 8 (Oreo) and up
 
         schedulePeriodicWorker()
+
+        val startMonitoringButton: Button = findViewById(R.id.startMonitoringButton)
+        startMonitoringButton.setOnClickListener() {view ->
+            startBatteryMonitoringWorker()
+        }
+
+        val stopMonitoringButton: Button = findViewById(R.id.stopMonitoringButton)
+        stopMonitoringButton.setOnClickListener() {view ->
+            stopBatteryMonitoringWorker()
+        }
 
         stopToneImage = findViewById(R.id.stopToneImage)
         stopToneImage?.setOnTouchListener { view, motionEvent ->
@@ -263,15 +274,15 @@ class MainActivity : AppCompatActivity() {
                 openSystemNotificationSettings()
                 true
             }
-            R.id.startBatteryMonitor -> {
-//                startService(serviceIntent)
-                startBatteryMonitoringWorker()
-                true
-            }
-            R.id.stopBatteryMonitor -> {
-                stopBatteryMonitoringWorker()
-                true
-            }
+//            R.id.startBatteryMonitor -> {
+////                startService(serviceIntent)
+//                startBatteryMonitoringWorker()
+//                true
+//            }
+//            R.id.stopBatteryMonitor -> {
+//                stopBatteryMonitoringWorker()
+//                true
+//            }
             R.id.about -> {
                 showAboutDialog()
                 true

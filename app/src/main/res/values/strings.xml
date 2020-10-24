@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="about_msg">\nChargeCap v1.2.1\n\nBuild 20200907.1</string>  <!-- Should be in sync with versionName in build.gradle:app -->
+    <string name="about_msg">\nChargeCap v1.2.2\n\nBuild 20201024.1</string>  <!-- Should be in sync with versionName in build.gradle:app -->
 
     <string name="app_name">ChargeCap</string>
     <string name="select_charge_limit">Charge limit</string>
@@ -12,6 +12,8 @@
     <string name="stop_tone">Stop tone</string>
     <string name="increment_limit">Increment limit</string>
     <string name="decrement_limit">Decrement limit</string>
+    <string name="start_monitoring">Start monitoring</string>
+    <string name="stop_monitoring">Stop monitoring</string>
 
     <string name="pref_tone_uri">tone_uri</string>
     <string name="pref_limit">limit</string>

@@ -6,6 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/startMonitoringButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:text="@string/start_monitoring"
+        android:textColor="#555555"
+        app:iconTint="#555555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/currentCharge"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintVertical_bias="0.15"
+        app:icon="@drawable/ic_baseline_play_circle_outline_24" />
+
+    <Button
+        android:id="@+id/stopMonitoringButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:textColor="#555555"
+        app:iconTint="#555555"
+        android:text="@string/stop_monitoring"
+        app:layout_constraintStart_toStartOf="@id/startMonitoringButton"
+        app:layout_constraintEnd_toEndOf="@id/startMonitoringButton"
+        app:layout_constraintTop_toBottomOf="@id/startMonitoringButton"
+        android:layout_marginTop="20dp"
+        app:icon="@drawable/ic_baseline_pause_circle_outline_24" />
+
+
     <TextView
         android:id="@+id/currentCharge"
         android:layout_width="wrap_content"
